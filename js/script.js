@@ -25,10 +25,14 @@ $(document).ready(function() {
     userFeed.run();
 
 
-    $(".gallery-img").click(function(){
-      var t = $(this).attr("src");
-      $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
-      $("#myModal").modal();
+    // This will create a single gallery from all elements that have class "gallery-item"
+    $('.gallery').magnificPopup({
+        type: 'image',
+        delegate: 'a',
+        gallery: {
+            enabled: true
+        }
+    });
 
 
 });
